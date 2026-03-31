@@ -7,18 +7,27 @@ spec:
   role: writer
   flow:
     label: "studio-cam-1"
-inputs:
 
-  - video:
-      pixelFormat: v210
-      width: 1920
-      height: 1080
-      fps: "25/1"
-  - video:
-      pixelFormat: v210
-      width: 1920
-      height: 1080
-      fps: "25/1"
+  # Media input specifications
+  inputs:
+    - name: "primary-feed"
+      media:
+        type: video
+        format:
+          pixelFormat: v210
+          resolution:
+            width: 1920
+            height: 1080
+          fps: "25/1"
+    - name: "secondary-feed"
+      media:
+        type: video
+        format:
+          pixelFormat: v210
+          resolution:
+            width: 1920
+            height: 1080
+          fps: "25/1"
 
 
 outputs:
