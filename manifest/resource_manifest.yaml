@@ -37,10 +37,19 @@ outputs:
   # Maybe an array of cases. 
   # Driver-facing compute hints (not enforced by Kubernetes unless a mutating webhook
   # copies them into Pod resources.requests/limits)
-  compute:
-    cpuLimit: "2000m"            # desired cap for container
-    cpuClass: "performance"      # driver-defined tier (e.g., latency|balanced|performance)
-    memoryRequired: "4Gi"        # working set RAM expected by the function
+
+  # Resource requirements for the media function
+  requirements:
+    compute:
+      cpuLimit: "2000m"            # desired cap for container
+      cpuClass: "performance"      # driver-defined tier (e.g., latency|balanced|performance)
+      memoryRequired: "4Gi"        # working set RAM expected by the function
+
+    domain:
+      path: "/mxl/domain1"
+
+    timing:
+      latencyBudgetUsec: 500
 
   # NEW: host platform capabilities (inventory/hints for driver-side placement logic)
   hostCapabilities:
@@ -132,9 +141,3 @@ outputs:
           - encoder
           - decoder
 
-  domain:
-    path: "/mxl/domain1"
-
-  timing:
-    latencyBudgetUsec: 500
-``
