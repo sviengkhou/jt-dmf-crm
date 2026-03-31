@@ -29,8 +29,17 @@ spec:
             height: 1080
           fps: "25/1"
 
-
-outputs:
+  # Media output specifications
+  outputs:
+    - name: "processed-output"
+      media:
+        type: video
+        format:
+          pixelFormat: v210
+          resolution:
+            width: 1920
+            height: 1080
+          fps: "25/1"
 
   # TODO 
   # Have section with capabilites and scenario -- Could be free text.
