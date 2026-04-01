@@ -21,7 +21,7 @@ spec:
           resolution:
             width: 1920
             height: 1080
-          fps: "25/1"
+          frame_rate: "25/1"
     - name: "secondary-feed"
       media:
         type: video
@@ -30,7 +30,7 @@ spec:
           resolution:
             width: 1920
             height: 1080
-          fps: "25/1"
+          frame_rate: "25/1"
 
   # Media output specifications
   outputs:
@@ -42,7 +42,7 @@ spec:
           resolution:
             width: 1920
             height: 1080
-          fps: "25/1"
+          frame_rate: "25/1"
 
   
   # Resource requirements for the media function
