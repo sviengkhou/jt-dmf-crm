@@ -94,7 +94,7 @@ spec:
             min: 3840
             max: 5120
           capabilities: # driver-specific GPU features (e.g., CUDA compute capability, or a custom set of flags)
-            - tensor_operatiåons
+            - tensor_operations
             - high_precision_compute
 
       memory:
