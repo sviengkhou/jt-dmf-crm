@@ -42,7 +42,32 @@ spec:
           resolution:
             width: 1920
             height: 1080
-          frame_rate: "25/1"
+# Media input specifications
+inputs:
+  primary-feed:
+    format:
+      video:
+        media_type: video/v210
+        frame_width: 1920
+        frame_height: 1080
+        frame_rate: "25/1"
+  secondary-feed:
+    format:
+      video:
+        media_type: video/v210
+        frame_width: 1920
+        frame_height: 1080
+        frame_rate: "25/1"
+
+# Media output specifications
+outputs:
+  processed-output:
+    format:
+      video:
+        media_type: video/v210
+        frame_width: 1920
+        frame_height: 1080
+        frame_rate: "25/1"
 
   
   # Resource requirements for the media function
