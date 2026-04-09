@@ -11,41 +11,40 @@ spec:
   flow:
     label: "studio-cam-1"
 
+  # Media input specifications
+  inputs:
+    primary-feed:
+      format:
+        video:
+          media_type: video/v210
+          frame_width: 1920
+          frame_height: 1080
+          frame_rate: "25/1"
+    secondary-feed:
+      format:
+        video:
+          media_type: video/v210
+          frame_width: 1920
+          frame_height: 1080
+          frame_rate: "25/1"
 
-# Media input specifications
-inputs:
-  primary-feed:
-    format:
-      video:
-        media_type: video/v210
-        frame_width: 1920
-        frame_height: 1080
-        frame_rate: "25/1"
-  secondary-feed:
-    format:
-      video:
-        media_type: video/v210
-        frame_width: 1920
-        frame_height: 1080
-        frame_rate: "25/1"
-
-# Media output specifications
-outputs:
-  processed-output:
-    format:
-      video:
-        media_type: video/v210
-        frame_width: 1920
-        frame_height: 1080
-        frame_rate: "25/1"
+  # Media output specifications
+  outputs:
+    processed-output:
+      format:
+        video:
+          media_type: video/v210
+          frame_width: 1920
+          frame_height: 1080
+          frame_rate: "25/1"
 
   
   # Resource requirements for the media function
   requirements:
     compute:
-      cpuLimit: "2000m"            # Millicores (m): A fractional part of a core. 1 CPU is equal to 1000m. 500m: Half a core (0.5 CPU).100m: One-tenth of a core (0.1 CPU).
-      cpuClass: "performance"      # driver-defined tier (e.g., latency|balanced|performance)
-      memory_required: "4Gi"        # Requests and limits in units as expressed in Kubernetes (e.g., Mi, Gi)
+      cpu_limit: "2000m"            # Millicores (m): A fractional part of a core. 1 CPU is equal to 1000m. 500m: Half a core (0.5 CPU).100m: One-tenth of a core (0.1 CPU).
+      cpu_class: "performance"      # driver-defined tier (e.g., latency|balanced|performance)
+      memory: "4Gi"               # Requests and limits in units as expressed in Kubernetes (e.g., Mi, Gi)
 
 
   # NEW: host platform capabilities (inventory/hints for driver-side placement logic)
@@ -95,7 +94,7 @@ outputs:
             min: 3840
             max: 5120
           capabilities: # driver-specific GPU features (e.g., CUDA compute capability, or a custom set of flags)
-            - tensor_operations
+            - tensor_operatiåons
             - high_precision_compute
 
       memory:
