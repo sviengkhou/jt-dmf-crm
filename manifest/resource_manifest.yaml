@@ -11,37 +11,7 @@ spec:
   flow:
     label: "studio-cam-1"
 
-  # Media input specifications
-  inputs:
-    - name: "primary-feed"
-      media:
-        type: video
-        format:
-          pixel_format: v210
-          resolution:
-            width: 1920
-            height: 1080
-          frame_rate: "25/1"
-    - name: "secondary-feed"
-      media:
-        type: video
-        format:
-          pixel_format: v210
-          resolution:
-            width: 1920
-            height: 1080
-          frame_rate: "25/1"
 
-  # Media output specifications
-  outputs:
-    - name: "processed-output"
-      media:
-        type: video
-        format:
-          pixel_format: v210
-          resolution:
-            width: 1920
-            height: 1080
 # Media input specifications
 inputs:
   primary-feed:
@@ -77,10 +47,6 @@ outputs:
       cpuClass: "performance"      # driver-defined tier (e.g., latency|balanced|performance)
       memory_required: "4Gi"        # Requests and limits in units as expressed in Kubernetes (e.g., Mi, Gi)
 
-
-
-    timing:
-      latency_budget_usec: 500      # Microseconds (usec) latency budget for processing each media unit (e.g., frame) - that the media function aims to meet 
 
   # NEW: host platform capabilities (inventory/hints for driver-side placement logic)
   reference_platform:
