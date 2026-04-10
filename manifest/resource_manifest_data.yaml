@@ -1,0 +1,116 @@
+apiVersion: mxl.media.fn/v1alpha1
+kind: MxlMediaFunctionParameters
+metadata:
+  name: writer-1080p25-v210
+  label:
+    app: media-processing-3G
+    function: video-writer
+  namespace: media
+spec:
+  role: writer
+  flow:
+    label: "studio-cam-1"
+
+  # Media input specifications
+  inputs:
+    primary-feed:
+      format:
+        audio:
+          media_type: audio/float32
+          sample_rate: 
+            numerator: 48000
+          channel_count: 2
+          bit_depth: 32
+
+    secondary-feed:
+      format:
+        audio:
+          media_type: audio/float32
+          sample_rate: 
+            numerator: 48000
+          channel_count: 2
+          bit_depth: 32
+
+  # Media output specifications
+  outputs:
+    processed-output:
+      format:
+        audio:
+          media_type: audio/float32
+          sample_rate: 
+            numerator: 48000
+          channel_count: 2
+          bit_depth: 32
+
+  
+  # Resource requirements for the media function
+  requirements:
+    compute:
+      cpu_limit: "200m"            # Millicores (m): A fractional part of a core. 1 CPU is equal to 1000m. 500m: Half a core (0.5 CPU).100m: One-tenth of a core (0.1 CPU).
+      cpu_class: "performance"      # driver-defined tier (e.g., latency|balanced|performance)
+      memory: "4Gi"               # Requests and limits in units as expressed in Kubernetes (e.g., Mi, Gi)
+
+
+  # NEW: host platform capabilities (inventory/hints for driver-side placement logic)
+  reference_platform:
+    host_capabilities:
+      cpus:
+        generation: "Skylake"  # CPU microarchitecture generation (e.g., Skylake, Ice Lake, etc.)
+        # Selected CPU features discovered via NFD or cpuid
+        features:
+          - AVX512F
+          - AVX512DQ
+          - SGX
+  
+      networks:
+        - name: eth0
+          bandwidth:
+            input:
+              min: 15Mb
+              max: 30Mb
+            output:
+              min: 10Mb
+              max: 25Mb
+          features: 
+            - jumbo_frames
+            - rdma
+
+        - name: eth1
+          bandwidth:
+            input:
+              min: 10Mb
+              max: 20Mb
+            output:
+              min: 50Mb
+              max: 150Mb
+          features:
+            - vlan_support
+            - link_aggregation
+
+      memory:
+        - type: ram
+          generation: DDR4
+          media_workload:
+            size: 1GB
+            throughput:
+              read: 4GB/s
+              write: 3GB/s
+
+        - type: cache
+          level: L3
+          media_workload:
+            size: 128MB
+            throughput:
+              read: 2GB/s
+              write: 1GB/s
+
+      storage:
+        - name: nvme_0
+          type: nvme # or nvme, ssd, hdd, spinning_disk, etc.
+          media_workload:
+            size: 4MB
+            throughput:
+              read: 2000MB/s
+              write: 1800MB/s
+            latency: 100 microseconds # average access latency
+            iops: 100000 # input/output operations per second
