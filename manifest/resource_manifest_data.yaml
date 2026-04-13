@@ -4,7 +4,7 @@ metadata:
   name: writer-1080p25-v210
   label:
     app: media-processing-3G
-    function: video-writer
+    function: anc-writer
   namespace: media
 spec:
   role: writer
