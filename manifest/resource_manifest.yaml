@@ -50,7 +50,7 @@ spec:
   # NEW: host platform capabilities (inventory/hints for driver-side placement logic)
   reference_platform:
     host_capabilities:
-      cpus:
+      cpu:
         generation: "Skylake"  # CPU microarchitecture generation (e.g., Skylake, Ice Lake, etc.)
         # Selected CPU features discovered via NFD or cpuid
         features:
