@@ -76,7 +76,7 @@ spec:
         - name: eth1
           bandwidth:
             input:
-              min: 10Mb
+              min: 10Mb/s
               max: 20Mb
             output:
               min: 50Mb
