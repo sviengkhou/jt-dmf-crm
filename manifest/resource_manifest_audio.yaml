@@ -68,7 +68,7 @@ spec:
               max: 30Mb/s
             output:
               min: 10Mb/s
-              max: 25Mb
+              max: 25Mb/s
           features: 
             - jumbo_frames
             - rdma
