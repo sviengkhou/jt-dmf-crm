@@ -67,7 +67,7 @@ spec:
               min: 15Mb/s
               max: 30Mb/s
             output:
-              min: 10Mb
+              min: 10Mb/s
               max: 25Mb
           features: 
             - jumbo_frames
