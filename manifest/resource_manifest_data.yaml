@@ -3,7 +3,7 @@ kind: MxlMediaFunctionParameters
 metadata:
   name: writer-anc-smpte291
   label:
-    app: media-processing-
+    app: media-processing-anc
     function: anc-writer
   namespace: media
 spec:
@@ -96,5 +96,5 @@ spec:
             throughput:
               read: 2000MB/s
               write: 1800MB/s
-            latency: 100us # average access latency
-            iops: 100000 # input/output operations per second
+            latency: 100us  # average access latency
+            iops: 100000    # input/output operations per second
