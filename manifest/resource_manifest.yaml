@@ -58,15 +58,15 @@ spec:
           - AVX512DQ
           - SGX
   
-      networks:
+      network:
         - name: eth0
           bandwidth:
             input:
-              min: 1500Mb
-              max: 3000Mb
+              min: 1500Mb/s
+              max: 3000Mb/s
             output:
-              min: 1000Mb
-              max: 2500Mb
+              min: 1000Mb/s
+              max: 2500Mb/s
           features: 
             - jumbo_frames
             - rdma
@@ -74,27 +74,11 @@ spec:
         - name: eth1
           bandwidth:
             input:
-              min: 1000Mb
-              max: 2000Mb
+              min: 1000Mb/s
+              max: 2000Mb/s
             output:
-              min: 500Mb
-min: 1500Mb/s
-max: 3000Mb/s
-output:
-min: 1000Mb/s
-max: 2500Mb/s
-features: 
-- jumbo_frames
-- rdma
-
-- name: eth1
-bandwidth:
-input:
-min: 1000Mb/s
-max: 2000Mb/s
-output:
-min: 500Mb/s
-max: 1500Mb/s
+              min: 500Mb/s
+              max: 1500Mb/s
           features:
             - vlan_support
             - link_aggregation

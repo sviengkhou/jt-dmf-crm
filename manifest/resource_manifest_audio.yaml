@@ -42,7 +42,7 @@ spec:
   # Resource requirements for the media function
   requirements:
     compute:
-      cpu: "200m"            # Millicores (m): A fractional part of a core. 1 CPU is equal to 1000m. 500m: Half a core (0.5 CPU).100m: One-tenth of a core (0.1 CPU).
+      cpu: "200m"                   # Millicores (m): A fractional part of a core. 1 CPU is equal to 1000m. 500m: Half a core (0.5 CPU).100m: One-tenth of a core (0.1 CPU).
       cpu_class: "performance"      # driver-defined tier (e.g., latency|balanced|performance)
       memory: "4Gi"                 # Requests and limits in units as expressed in Kubernetes (e.g., Mi, Gi)
 
@@ -58,7 +58,7 @@ spec:
           - AVX512DQ
           - SGX
   
-      networks:
+      network:
         - name: eth0
           bandwidth:
             input:
