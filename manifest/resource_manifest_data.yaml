@@ -40,7 +40,22 @@ spec:
           sample_rate: 
             numerator: 48000
           channel_count: 2
-          bit_depth: 32
+  # Media input specifications
+  inputs:
+    video:
+      format:
+        video:
+          media_type: video/v210
+          frame_width: 1920
+          frame_height: 1080
+          frame_rate: "25/1"
+
+  # Media output specifications
+  outputs:
+    ancillary:
+      format:
+        data:
+          media_type: video/smpte291
 
   
   # Resource requirements for the media function
