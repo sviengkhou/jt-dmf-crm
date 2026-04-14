@@ -64,7 +64,7 @@ spec:
         - name: eth0
           bandwidth:
             input:
-              min: 15Mb
+              min: 15Mb/s
               max: 30Mb
             output:
               min: 10Mb
