@@ -77,7 +77,7 @@ spec:
           bandwidth:
             input:
               min: 10Mb/s
-              max: 20Mb
+              max: 20Mb/s
             output:
               min: 50Mb
               max: 150Mb
