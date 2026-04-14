@@ -110,5 +110,5 @@ spec:
             throughput:
               read: 2000MB/s
               write: 1800MB/s
-            latency: 100 microseconds # average access latency
+            latency: 100us # average access latency
             iops: 100000 # input/output operations per second
