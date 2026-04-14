@@ -80,7 +80,7 @@ spec:
               max: 20Mb/s
             output:
               min: 50Mb/s
-              max: 150Mb
+              max: 150Mb/s
           features:
             - vlan_support
             - link_aggregation
