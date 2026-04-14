@@ -79,7 +79,7 @@ spec:
               min: 10Mb/s
               max: 20Mb/s
             output:
-              min: 50Mb
+              min: 50Mb/s
               max: 150Mb
           features:
             - vlan_support
