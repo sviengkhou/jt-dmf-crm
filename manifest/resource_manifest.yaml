@@ -78,7 +78,23 @@ spec:
               max: 2000Mb
             output:
               min: 500Mb
-              max: 1500Mb
+min: 1500Mb/s
+max: 3000Mb/s
+output:
+min: 1000Mb/s
+max: 2500Mb/s
+features: 
+- jumbo_frames
+- rdma
+
+- name: eth1
+bandwidth:
+input:
+min: 1000Mb/s
+max: 2000Mb/s
+output:
+min: 500Mb/s
+max: 1500Mb/s
           features:
             - vlan_support
             - link_aggregation
