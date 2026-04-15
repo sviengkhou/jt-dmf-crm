@@ -17,14 +17,18 @@ spec:
       format:
         audio:
           media_type: audio/float32
-          sample_rate: 48000
+          sample_rate: 
+            numerator: 48000
+            denominator: 1
           channel_count: 2
          
     secondary-feed:
       format:
         audio:
           media_type: audio/float32
-          sample_rate: 48000
+          sample_rate: 
+            numerator: 48000
+            denominator: 1
           channel_count: 2
           
 
@@ -34,7 +38,9 @@ spec:
       format:
         audio:
           media_type: audio/float32
-          sample_rate: 48000
+          sample_rate: 
+            numerator: 48000
+            denominator: 1
           channel_count: 2
   
 
