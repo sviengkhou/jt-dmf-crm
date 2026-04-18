@@ -36,7 +36,7 @@ spec:
           media_type: video/v210
           frame_width: 1920
           frame_height: 1080
-          frame_rate: "25/1001" 
+          frame_rate: "25"
            
   # Resource requirements for the media function
   requirements:
