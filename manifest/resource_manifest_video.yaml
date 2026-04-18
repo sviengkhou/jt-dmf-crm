@@ -19,19 +19,15 @@ spec:
           media_type: video/v210
           frame_width: 1920
           frame_height: 1080
-          grain_rate: 
-            numerator: 25
-            denominator: 1
+          frame_rate: "25"
+            
     secondary-feed:
       format:
         video:
           media_type: video/v210
           frame_width: 1920
           frame_height: 1080
-          grain_rate: 
-            numerator: 25
-            denominator: 1
-
+          frame_rate: "25"
   # Media output specifications
   outputs:
     processed-output:
@@ -40,10 +36,8 @@ spec:
           media_type: video/v210
           frame_width: 1920
           frame_height: 1080
-          grain_rate: 
-            numerator: 25
-            denominator: 1
-  
+          frame_rate: "25/1001" 
+           
   # Resource requirements for the media function
   requirements:
     compute:
